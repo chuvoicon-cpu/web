@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catcake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <svg width="60" height="60">
+                <circle cx="30" cy="35" r="20" stroke="white" stroke-width="3" fill="#ff4757" />
+            </svg>
+            <div>
+                <h1>CATCAKE </h1>
+                <p>Thế Giới Mèo Cưng</p>
+            </div>
+        </div>
+        <div>
+            <a href="cart.html" class="btn">Giỏ hàng (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="products.html">Ghép Đôi & Dịch Vụ</a></li>
+            <li><a href="product-detail.html">Hồ Sơ Chi Tiết</a></li>
+            <li><a href="news.html">Tạp Chí Meo Meo</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="careers.html">Tuyển Dụng</a></li>
+            <li><a href="contact.html">Liên Hệ</a></li>
+            <li><a href="login.html" class="active">Đăng Nhập</a></li>
+            <li><a href="cart.html">Giỏ Hàng</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2 class="section-title"> Đăng Nhập Hoặc Tạo Hồ Sơ Mới </h2>
+
+        <section class="grid-2">
+            <!-- Phần Đăng Nhập cho người đã có tài khoản (Đã sửa lỗi hiển thị chữ) -->
+            <div>
+                <form onsubmit="return handleLogin()">
+                    <fieldset style="padding: 15px; border-radius: 8px;">
+                        <legend><b>Đăng Nhập</b></legend>
+                        <br>
+                        <label for="login-email">Email đăng nhập:</label>
+                        <input type="email" id="login-email" required placeholder="email@gmail.com">
+
+                        <label for="login-pass">Mật khẩu tài khoản:</label>
+                        <input type="password" id="login-pass" required placeholder="********">
+
+                        <br><br>
+                        <input type="submit" class="btn" value="Đăng Nhập">
+                    </fieldset>
+                </form>
+            </div>
+
+            <!-- Phần Đăng Ký Tài Khoản Mới -->
+            <div>
+                <form id="regForm">
+                    <fieldset style="padding: 15px; border-radius: 8px;">
+                        <legend><b>Đăng Ký Tài Khoản & Hồ Sơ Mèo Mới</b></legend>
+
+                        <label for="reg-owner">Họ tên Chủ nuôi (*):</label>
+                        <input type="text" id="reg-owner" required placeholder="VD: Catcake Team">
+
+                        <label for="reg-cat">Tên gọi của Mèo (*):</label>
+                        <input type="text" id="reg-cat" required placeholder="VD: Bé MIMI">
+
+                        <label for="reg-breed">Giống mèo (Chọn hoặc tự nhập):</label>
+                        <input type="text" id="reg-breed" list="breeds" placeholder="Chọn giống mèo...">
+                        <datalist id="breeds">
+                            <option value="Mèo Ta Việt Nam">
+                            <option value="Anh Lông Ngắn (ALN)">
+                            <option value="Anh Lông Dài (ALD)">
+                            <option value="Scottish Fold (Tai cụp)">
+                            <option value="Munchkin Chân Ngắn">
+                        </datalist>
+
+                        <label>Giới tính của mèo:</label>
+                        <input type="radio" id="g-male" name="catgender" value="Đực" checked>
+                        <label for="g-male" style="display:inline;">Mèo Đực</label> &nbsp;&nbsp;
+                        <input type="radio" id="g-female" name="catgender" value="Cái">
+                        <label for="g-female" style="display:inline;">Mèo Cái</label>
+
+                        <label for="reg-age">Tuổi của mèo (từ 10 đến 120 tháng):</label>
+                        <input type="number" id="reg-age" min="10" max="120" value="12">
+                        <p id="age-error" style="color:red;"></p>
+
+                        <br>
+                        <input type="checkbox" id="vaccine-ok" required>
+                        <label for="vaccine-ok" style="display:inline;">Tôi cam kết bé đã tiêm phòng đầy đủ</label>
+
+                        <br><br>
+                        <button type="button" class="btn" onclick="validateRegister()">Hoàn Tất Đăng Ký</button>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p> Copyright &copy; 2026 by Catcake Vietnam.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        function handleLogin() {
+            let email = document.getElementById("login-email").value;
+            alert("Đăng nhập thành công! Chào mừng " + email + " quay trở lại hệ thống Catcake.");
+            return false;
+        }
+
+        function validateRegister() {
+            let ageInput = document.getElementById("reg-age");
+            // Ràng buộc tuổi được kiểm tra bằng phép so sánh cơ bản (Chương 5 - Rẽ nhánh if...else)
+            let age = parseInt(ageInput.value);
+            let errorMsg = document.getElementById("age-error");
+            errorMsg.innerHTML = "";
+
+            if (age < 10) {
+                errorMsg.innerHTML = "Mèo dưới 10 tháng tuổi chưa đủ tuổi ghép đôi!";
+                return;
+            } else if (age > 120) {
+                errorMsg.innerHTML = "Số tháng tuổi vượt quá giới hạn cho phép!";
+                return;
+            }
+
+            let form = document.getElementById("regForm");
+            if (!form.checkValidity()) {
+                alert("Vui lòng điền đầy đủ Họ tên chủ, Tên mèo và tích cam kết tiêm phòng!");
+            } else {
+                let owner = document.getElementById("reg-owner").value;
+                let cat = document.getElementById("reg-cat").value;
+                alert(`Chúc mừng ${owner}! Hồ sơ ghép đôi của bé "${cat}" đã được khởi tạo.`);
+                form.reset();
+            }
+        }
+    </script>
+</body>
+</html>

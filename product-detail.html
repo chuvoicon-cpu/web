@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catcake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <svg width="60" height="60">
+                <circle cx="30" cy="35" r="20" stroke="white" stroke-width="3" fill="#ff4757" />
+            </svg>
+            <div>
+                <h1>CATCAKE</h1>
+                <p>Thế Giới Mèo Cưng</p>
+            </div>
+        </div>
+        <div>
+            <a href="cart.html" class="btn"> Giỏ hàng (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="products.html">Ghép Đôi & Dịch Vụ</a></li>
+            <li><a href="product-detail.html" class="active">Hồ Sơ Chi Tiết</a></li>
+            <li><a href="news.html">Tạp Chí Meo Meo</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="careers.html">Tuyển Dụng</a></li>
+            <li><a href="contact.html">Liên Hệ</a></li>
+            <li><a href="login.html">Đăng Nhập</a></li>
+            <li><a href="cart.html">Giỏ Hàng</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2 class="section-title" id="detail-heading">Hồ Sơ Chi Tiết: Bé Bơ - Anh Lông Ngắn (ALN)</h2>
+
+        <section class="grid-2 card">
+            <div>
+                <!-- Phóng to ảnh khi rê chuột onmouseover / onmouseout (Chương 5 - Mục 5.1) -->
+                <img id="detail-img" src="images/cat-bo.jpg" 
+                     alt="Bé Bơ ALN" style="width:100%; height:330px; transition: transform 0.4s ease;"
+                     onmouseover="zoomImg()" onmouseout="resetImg()">
+                <p><i>(Di chuột vào ảnh hoặc nhấn nút bên dưới để đổi góc chụp)</i></p>
+                <button class="btn" id="btn-goc-1" onclick="changeAngle(1)">Ảnh Chân Dung</button>
+                <button class="btn" id="btn-goc-2" onclick="changeAngle(2)">Ảnh Đang Chơi</button>
+            </div>
+
+            <div>
+                <span class="badge">Đã Kiểm Duyệt Y Tế</span>
+                <h3 id="detail-title">Bé Bơ - Tìm Bạn Trai Cùng Dòng ALN hoặc Scottish</h3>
+                <p><b>Giá dịch vụ ghép đôi trọn gói:</b> <span id="detail-price" style="color:red; font-size:2.2rem; font-weight:bold;">350.000 VNĐ</span></p>
+                <hr style="margin: 15px 0;">
+                <p id="detail-mota-chuan"><b>Mô tả chi tiết:</b> Bé Bơ hiện 12 tháng tuổi, sinh sống cùng anh Trần Hoàng Nam tại Quận Cầu Giấy, Hà Nội. Bé có bộ lông màu xám xanh dày mượt, má phúng phính, tính tình cực kỳ hiền lành và chưa từng cào cấu.</p>
+                <br>
+                <p><b>Mức độ thân thiện:</b> <meter id="detail-meter" min="0" max="100" value="95">95%</meter><span id="detail-meter-text"> (95/100)</span></p>
+                <p><b>Tỷ lệ hoàn tất tiêm chủng:</b> <progress id="detail-progress" value="100" max="100">100%</progress><span id="detail-progress-text"> (3/3 mũi)</span></p>
+                <br>
+                <button class="btn" id="detail-cart-btn" onclick="addToCart('CAT02', 'Gói Hẹn Hò Cùng Bé Bơ', 350000)"> Thêm Vào Giỏ Hàng Đặt Lịch</button>
+                <a href="contact.html" class="btn" style="background-color:#2f3542;">Yêu Cầu Báo Giá Riêng</a>
+            </div>
+        </section>
+
+        <!-- Bảng thông số kỹ thuật / Hồ sơ thú y (Sử dụng colspan Chương 2 - Mục 2.2.3) -->
+        <h3 class="section-title">Bảng Thông Số Sức Khỏe & Phả Hệ</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tiêu chí hồ sơ</th>
+                    <th colspan="2">Thông tin chi tiết được xác nhận bởi Bác sĩ Thú y Catcake</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Giống loài &amp; Màu lông</b></td>
+                    <td id="detail-giong">British Shorthair (Anh Lông Ngắn)</td>
+                    <td id="detail-color">Màu Xám Xanh (Blue)</td>
+                </tr>
+                <tr>
+                    <td><b>Cân nặng &amp; Độ tuổi</b></td>
+                    <td id="detail-weight">4.2 kg</td>
+                    <td id="detail-age">12 tháng tuổi</td>
+                </tr>
+                <tr>
+                    <td><b>Chủ nuôi &amp; Khu vực</b></td>
+                    <td id="detail-owner">Anh Trần Hoàng Nam</td>
+                    <td id="detail-location">Phường Dịch Vọng, Cầu Giấy, Hà Nội</td>
+                </tr>
+                <tr>
+                    <td><b>Tình trạng tiêm phòng</b></td>
+                    <td id="detail-vaccine">Đã tiêm phòng 4 bệnh &amp; Dại</td>
+                    <td id="detail-test">Xét nghiệm FIV/FeLV: Âm tính</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Đánh giá từ khách hàng -->
+        <section class="card" style="margin-top: 25px;">
+            <h3> Đánh giá từ các "Thông Gia" trước đó</h3>
+            <p id="detail-review">⭐⭐⭐⭐⭐ <b>Chị Thu Hà (Đống Đa):</b> "Tháng trước mình cho bé Milo nhà mình qua giao lưu tại phòng chờ của Catcake. Không gian rất sạch sẽ, bé Bơ ở ngoài nhìn còn tròn và đáng yêu hơn trong ảnh!"</p>
+        </section>
+    </main>
+
+    <footer>
+        <p> Copyright &copy; 2026 by Catcake Vietnam.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Dữ liệu của hồ sơ đang hiển thị trên trang (dùng chung cho zoom & đổi góc chụp)
+        let hoSoHienTai = null;
+
+        function zoomImg() {
+            // Phóng to thật sự bằng transform scale (Chương 3 - Mục 3.5.12)
+            document.getElementById("detail-img").style.transform = "scale(1.08)";
+        }
+        function resetImg() {
+            document.getElementById("detail-img").style.transform = "scale(1)";
+        }
+        function changeAngle(type) {
+            let img = document.getElementById("detail-img");
+            if (type === 1) {
+                img.src = hoSoHienTai.hinh;
+            } else {
+                img.src = hoSoHienTai.hinhGoc2;
+            }
+        }
+
+        // Đọc mã hồ sơ CAT01 - CAT06 trên URL ?ma=... (Chương 5 - BOM: window.location)
+        function docMaHoSoTrenURL() {
+            let thamSo = window.location.search.replace("?", "");
+            for (let capThamSo of thamSo.split("&")) {
+                let cap = capThamSo.split("=");
+                if (cap[0] === "ma") {
+                    return cap[1];
+                }
+            }
+            return "";
+        }
+
+        // Đổ dữ liệu hồ sơ được chọn vào toàn bộ phần tử của trang
+        function renderDetail() {
+            let ma = docMaHoSoTrenURL();
+
+            // Không truyền tham số hoặc mã không tồn tại -> mặc định hiển thị hồ sơ Bơ (CAT02)
+            if (chiTietHoSo[ma] === undefined) {
+                ma = "CAT02";
+            }
+            hoSoHienTai = chiTietHoSo[ma];
+
+            // Tiêu đề trình duyệt (Chương 5 - document / DOM)
+            document.title = "Chi Tiết Hồ Sơ: Bé " + hoSoHienTai.ten + " - Catcake";
+
+            // Tiêu đề lớn + ảnh
+            document.getElementById("detail-heading").innerHTML = "Hồ Sơ Chi Tiết: Bé " + hoSoHienTai.ten + " - " + hoSoHienTai.giong;
+            document.getElementById("detail-img").src = hoSoHienTai.hinh;
+            document.getElementById("detail-img").alt = "Bé " + hoSoHienTai.ten;
+
+            // Thông tin gói hẹn hò
+            document.getElementById("detail-title").innerHTML = hoSoHienTai.tieuDe;
+            document.getElementById("detail-price").innerHTML = hoSoHienTai.gia.toLocaleString() + " VNĐ";
+            document.getElementById("detail-mota-chuan").innerHTML = "<b>Mô tả chi tiết:</b> " + hoSoHienTai.motaChiTiet;
+
+            // Thanh meter & progress (Chương 5 - thay đổi thuộc tính phần tử)
+            document.getElementById("detail-meter").setAttribute("value", hoSoHienTai.thanThien);
+            document.getElementById("detail-meter-text").innerHTML = " (" + hoSoHienTai.thanThien + "/100)";
+            document.getElementById("detail-progress").setAttribute("value", Math.round(hoSoHienTai.muiTiem * 100 / hoSoHienTai.tongMui));
+            document.getElementById("detail-progress-text").innerHTML = " (" + hoSoHienTai.muiTiem + "/" + hoSoHienTai.tongMui + " mũi)";
+
+            // Nút giỏ hàng theo đúng bé đang xem (tiêu đề & giá khớp products.html)
+            document.getElementById("detail-cart-btn").setAttribute("onclick",
+                "addToCart('" + ma + "', '" + hoSoHienTai.goiCart + "', " + hoSoHienTai.gia + ")");
+
+            // Bảng thông số sức khỏe & phả hệ
+            document.getElementById("detail-giong").innerHTML = hoSoHienTai.giong;
+            document.getElementById("detail-color").innerHTML = hoSoHienTai.mauLong;
+            document.getElementById("detail-weight").innerHTML = hoSoHienTai.canNang;
+            document.getElementById("detail-age").innerHTML = hoSoHienTai.tuoi + " tháng tuổi";
+            document.getElementById("detail-owner").innerHTML = hoSoHienTai.chuNuoi;
+            document.getElementById("detail-location").innerHTML = hoSoHienTai.khuVuc;
+            document.getElementById("detail-vaccine").innerHTML = hoSoHienTai.tiemPhong;
+            document.getElementById("detail-test").innerHTML = hoSoHienTai.xetNghiem;
+
+            // Đánh giá của "thông gia" đã từng ghép đôi với bé này
+            document.getElementById("detail-review").innerHTML = hoSoHienTai.danhGia;
+
+            // Bé chưa có ảnh góc thứ 2 -> ẩn nút "Ảnh Đang Chơi" (display: none - Chương 3)
+            if (hoSoHienTai.hinhGoc2 === "") {
+                document.getElementById("btn-goc-2").style.display = "none";
+            }
+        }
+
+        renderDetail();
+    </script>
+</body>
+</html>

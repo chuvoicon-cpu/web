@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Catcake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <svg width="60" height="60">
+                <circle cx="30" cy="35" r="20" stroke="white" stroke-width="3" fill="#ff4757" />
+            </svg>
+            <div>
+                <h1>CATCAKE</h1>
+                <p>Thế Giới Mèo Cưng</p>
+            </div>
+        </div>
+        <div>
+            <a href="cart.html" class="btn"> Giỏ hàng (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="products.html" class="active">Ghép Đôi & Dịch Vụ</a></li>
+            <li><a href="product-detail.html">Hồ Sơ Chi Tiết</a></li>
+            <li><a href="news.html">Tạp Chí Meo Meo</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="careers.html">Tuyển Dụng</a></li>
+            <li><a href="contact.html">Liên Hệ</a></li>
+            <li><a href="login.html">Đăng Nhập</a></li>
+            <li><a href="cart.html">Giỏ Hàng</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2 class="section-title">Những Chú Mèo Đang Tìm Bạn Đời (Có Bảo Lãnh Thú Y)</h2>
+        <section class="grid-3">
+            <div class="card">
+                <img src="images/cat-muop.jpg" alt="Mèo Mướp">
+                <span class="badge">Hà Nội • Đực</span>
+                <h3>Hồ sơ 01: Bé Mướp (Mèo Vàng)</h3>
+                <p><b>Chủ:</b> Chị Minh Anh | <b>Tuổi:</b> 14 tháng</p>
+                
+                <p><b>Chi phí hẹn hò:</b> 250.000 VNĐ</p>
+                <br>
+                <a href="product-detail.html?ma=CAT01" class="btn">Chi tiết</a>
+                <button class="btn" onclick="addToCart('CAT01', 'Gói Hẹn Hò Cùng Bé Mướp', 250000)">Thêm vào giỏ</button>
+            </div>
+
+            <div class="card">
+                <img src="images/cat-bo.jpg" alt="Mèo Bơ">
+                <span class="badge">Hà Nội • Cái</span>
+                <h3>Hồ sơ 02: Bé Bơ (Anh Lông Ngắn)</h3>
+                <p><b>Chủ:</b> Anh Hoàng Nam | <b>Tuổi:</b> 12 tháng</p>
+               
+                <p><b>Chi phí hẹn hò:</b> 350.000 VNĐ</p>
+                <br>
+                <a href="product-detail.html?ma=CAT02" class="btn">Chi tiết</a>
+                <button class="btn" onclick="addToCart('CAT02', 'Gói Hẹn Hò Cùng Bé Bơ', 350000)">Thêm vào giỏ</button>
+            </div>
+
+            <div class="card">
+                <img src="images/cat-mochi.jpg" alt="Mèo Mochi">
+                <span class="badge">TP.HCM • Cái</span>
+                <h3>Hồ sơ 03: Bé Mochi (Scottish)</h3>
+                <p><b>Chủ:</b> Chị Thu Thảo | <b>Tuổi:</b> 10 tháng</p>
+              
+                <p><b>Chi phí hẹn hò:</b> 400.000 VNĐ</p>
+                <br>
+                <a href="product-detail.html?ma=CAT03" class="btn">Chi tiết</a>
+                <button class="btn" onclick="addToCart('CAT03', 'Gói Hẹn Hò Cùng Bé Mochi', 400000)">Thêm vào giỏ</button>
+            </div>
+
+            <div class="card">
+                <img src="images/cat-simba.jpg" alt="Mèo Simba">
+                <span class="badge">Hà Nội • Đực</span>
+                <h3>Hồ sơ 04: Bé Simba (Ba Tư)</h3>
+                <p><b>Chủ:</b> Anh Việt Hoàng | <b>Tuổi:</b> 18 tháng</p>
+               
+                <p><b>Chi phí hẹn hò:</b>500.000 VNĐ</p>
+                <br>
+                <a href="product-detail.html?ma=CAT04" class="btn">Chi tiết</a>
+                <button class="btn" onclick="addToCart('CAT04', 'Gói Hẹn Hò Cùng Bé Simba', 500000)">Thêm vào giỏ</button>
+            </div>
+
+            <div class="card">
+                <img src="images/cat-dau.jpg" alt="Mèo Đậu Đậu">
+                <span class="badge">Đà Nẵng • Đực</span>
+                <h3>Hồ sơ 05: Bé Đậu (Munchkin)</h3>
+                <p><b>Chủ:</b> Chị Ngọc Lan | <b>Tuổi:</b> 15 tháng</p>
+               
+                <p><b>Chi phí hẹn hò:</b> 450.000 VNĐ</p>
+                <br>
+                <a href="product-detail.html?ma=CAT05" class="btn">Chi tiết</a>
+                <button class="btn" onclick="addToCart('CAT05', 'Gói Hẹn Hò Cùng Bé Đậu', 450000)">Thêm vào giỏ</button>
+            </div>
+
+            <div class="card">
+                <img src="images/cat-tuyet.jpg" alt="Mèo Tuyết">
+                <span class="badge">Hà Nội • Cái</span>
+                <h3>Hồ sơ 06: Bé Tuyết (Ragdoll)</h3>
+                <p><b>Chủ:</b> Anh Đức Phúc | <b>Tuổi:</b> 16 tháng</p>
+              
+                <p><b>Chi phí hẹn hò:</b>550.000 VNĐ</p>
+                <br>
+                <a href="product-detail.html?ma=CAT06" class="btn">Chi tiết</a>
+                <button class="btn" onclick="addToCart('CAT06', 'Gói Hẹn Hò Cùng Bé Tuyết', 550000)">Thêm vào giỏ</button>
+            </div>
+        </section>
+
+        <h2 class="section-title"> Sản Phẩm & Dịch Vụ</h2>
+        <section class="grid-3">
+            <div class="card">
+                <img src="images/product-magazine.jpg" alt="Tạp chí in">
+                <h3>Ấn Phẩm Tạp Chí Meo Meo Tháng 10</h3>
+                <p>Cẩm nang hướng dẫn chăm sóc mèo mang thai và nuôi con và bộ sưu tập ảnh mèo đáng yêu đặc biệt của tháng 9.</p>
+                <p><b>Giá bán:</b> <del>120.000đ</del> <b>89.000 VNĐ</b></p>
+                <br>
+                <button class="btn" onclick="addToCart('PRD01', 'Tạp chí Catcake Số Tháng 10', 89000)">Thêm vào giỏ</button>
+            </div>
+
+            <div class="card">
+                <img src="images/product-collar.jpg" alt="Vòng cổ">
+                <h3>Cặp Vòng Cổ Khắc Tên Cho cặp đôi mèo</h3>
+                <p>Vòng cổ khắc tên và số điện thoại chủ nuôi cho cặp đôi mèo hẹn hò tại Catcake.</p>
+                <p><b>Giá bán:</b> <b>150.000 VNĐ</b></p>
+                <br>
+                <button class="btn" onclick="addToCart('PRD02', 'Cặp Vòng Cổ Cặp Đôi Mèo', 150000)">Thêm vào giỏ</button>
+            </div>
+
+            <div class="card">
+                <img src="images/product-spa.jpg" alt="Spa">
+                <h3>Combo Spa Ngày Hẹn Hò</h3>
+                <p>Cắt tỉa móng, vệ sinh tai, tắm thảo mộc và tỉa lông theo yêu cầu.</p>
+                <p><b>Giá bán:</b> <b>200.000 VNĐ</b></p>
+                <br>
+                <button class="btn" onclick="addToCart('PRD03', 'Combo Spa Tắm Thơm Mèo', 200000)">Thêm vào giỏ</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p> Copyright &copy; 2026 by Catcake Vietnam.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

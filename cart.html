@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catcake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <svg width="60" height="60">
+                <circle cx="30" cy="35" r="20" stroke="white" stroke-width="3" fill="#ff4757" />
+            </svg>
+            <div>
+                <h1>CATCAKE</h1>
+                <p>Thế Giới Mèo Cưng</p>
+            </div>
+        </div>
+        <div>
+            <a href="cart.html" class="btn"> Giỏ hàng (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="products.html">Ghép Đôi & Dịch Vụ</a></li>
+            <li><a href="product-detail.html">Hồ Sơ Chi Tiết</a></li>
+            <li><a href="news.html">Tạp Chí Meo Meo</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="careers.html">Tuyển Dụng</a></li>
+            <li><a href="contact.html">Liên Hệ</a></li>
+            <li><a href="login.html">Đăng Nhập</a></li>
+            <li><a href="cart.html" class="active">Giỏ Hàng</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2 class="section-title">Giỏ Hàng Của Bạn</h2>
+
+        <table>
+    
+            <thead>
+                <tr>
+                    <th>Dịch Vụ / Sản Phẩm</th>
+                    <th>Đơn Giá</th>
+                    <th>Số Lượng</th>
+                    <th>Thành Tiền</th>
+                    <th>Thao Tác</th>
+                </tr>
+            </thead>
+            <tbody id="cart-body">
+                <!-- Dữ liệu được đổ tự động từ localStorage qua script.js -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" style="text-align:right; font-weight:bold;">TỔNG CỘNG THANH TOÁN:</td>
+                    <td colspan="2"><b id="cart-total" style="color:#ff6b81; font-size:2rem;">0 VNĐ</b></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div style="text-align: right; margin-top: 20px;">
+            <a href="products.html" class="btn" style="background-color:#57606f;">⬅ Tiếp Tục Chọn Dịch Vụ</a>
+            <button class="btn" style="background-color:#ff6b81;" onclick="clearAllCart()">🗑 Xóa Toàn Bộ</button>
+            <button class="btn" style="background-color:#b7c9ed;" onclick="checkoutCart()">💳 Tiến Hành Thanh Toán</button>
+        </div>
+    </main>
+
+    <footer>
+        <p> Copyright &copy; 2026 by Catcake Vietnam.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

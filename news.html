@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Catcake </title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Internal CSS sử dụng ::first-letter (Chương 3 - Mục 3.3.4) -->
+    <style>
+        .blog-excerpt::first-letter {
+            color: #ff6b81;
+            font-size: 2.4rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <svg width="60" height="60">
+                <circle cx="30" cy="35" r="20" stroke="white" stroke-width="3" fill="#ff4757" />
+            </svg>
+            <div>
+                <h1>CATCAKE</h1>
+                <p>Thế Giới Mèo Cưng</p>
+            </div>
+        </div>
+        <div>
+            <a href="cart.html" class="btn">🛒 Giỏ hàng (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="products.html">Ghép Đôi & Dịch Vụ</a></li>
+            <li><a href="product-detail.html">Hồ Sơ Chi Tiết</a></li>
+            <li><a href="news.html" class="active">Tạp Chí Meo Meo</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="careers.html">Tuyển Dụng</a></li>
+            <li><a href="contact.html">Liên Hệ</a></li>
+            <li><a href="login.html">Đăng Nhập</a></li>
+            <li><a href="cart.html">Giỏ Hàng</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2 class="section-title"> Tạp Chí Catcake - Những cục bông nhỏ đáng yêu!</h2>
+
+        <section class="grid-3">
+            <article class="card">
+                <img src="images/news-1.jpg" alt="Bài viết 1">
+                <small>Ngày đăng: 20/10/2026 | Tác giả: Catlife</small>
+                <h3>5 Dấu Hiệu Cho Thấy Mèo Cưng Đã Sẵn Sàng Kết Đôi</h3>
+                <p class="blog-excerpt">Khi bước vào độ tuổi từ 10 đến 12 tháng, các bé mèo bắt đầu có những biểu hiện gọi bạn đời rất đặc trưng như kêu nhiều hơn vào ban đêm và làm nũng chủ...</p>
+                <br>
+                <a href="#bai-chi-tiet" class="btn">Đọc Tiếp Bài Viết</a>
+            </article>
+
+            <article class="card">
+                <img src="images/news-2.jpg" alt="Bài viết 2">
+                <small>Ngày đăng: 15/10/2026 | Tác giả: Bảo Ngọc</small>
+                <h3>Thực Phẩm Dinh Dưỡng Cho Mèo Mẹ Mang Thai</h3>
+                <p class="blog-excerpt">Sau buổi hẹn hò thành công tại Catcake, chế độ ăn giàu canxi, protein từ thịt gà, cá hồi và pate tươi sẽ giúp mèo mẹ khỏe mạnh suốt 63 ngày thai kỳ...</p>
+                <br>
+                <a href="#bai-chi-tiet" class="btn">Đọc Tiếp Bài Viết</a>
+            </article>
+
+            <article class="card">
+                <img src="images/news-3.jpg" alt="Bài viết 3">
+                <small>Ngày đăng: 10/10/2026 | Tác giả: Bảo Ngọc</small>
+                <h3>Tại Sao Không Nên Ghép Đôi Hai Mèo Tai Cụp Với Nhau?</h3>
+                <p class="blog-excerpt">Nhiều người nuôi chưa biết rằng việc phối hai cá thể cùng mang gen tai cụp Scottish Fold sẽ gây dị tật xương sụn nghiêm trọng cho mèo con...</p>
+                <br>
+                <a href="#bai-chi-tiet" class="btn">Đọc Tiếp Bài Viết</a>
+            </article>
+        </section>
+
+        <!-- Liên kết đánh dấu Bookmark #bai-chi-tiet (Chương 2 - Mục 2.2.4) -->
+        <section id="bai-chi-tiet" class="card">
+            <h3> Góc Chuyên Sâu: Lưu Ý Vàng Khi Đưa Mèo Đi Hẹn Hò Lần Đầu</h3>
+            <p>Để buổi gặp gỡ giữa hai bé diễn ra suôn sẻ, chủ nuôi cần cắt ngắn móng cho cả hai bé trước 1 ngày, mang theo chăn hoặc đồ chơi có mùi quen thuộc của bé để giảm căng thẳng khi sang không gian mới.</p>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p> Copyright &copy; 2026 by Catcake Vietnam.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

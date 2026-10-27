@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catcake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <svg width="60" height="60">
+                <polygon points="10,25 15,5 30,18" style="fill:#ffa502;stroke:#ffffff;stroke-width:2" />
+                <polygon points="50,25 45,5 30,18" style="fill:#ffa502;stroke:#ffffff;stroke-width:2" />
+                <circle cx="30" cy="35" r="20" stroke="white" stroke-width="3" fill="#ff4757" />
+                <circle cx="23" cy="32" r="3" fill="white" />
+                <circle cx="37" cy="32" r="3" fill="white" />
+            </svg>
+            <div>
+                <h1>CATCAKE</h1>
+                <p>Thế Giới Mèo Cưng</p>
+            </div>
+        </div>
+        <div>
+            <a href="cart.html" class="btn"> Giỏ hàng (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="about.html" class="active">Giới thiệu</a></li>
+            <li><a href="products.html">Ghép Đôi & Dịch Vụ</a></li>
+            <li><a href="product-detail.html">Hồ Sơ Chi Tiết</a></li>
+            <li><a href="news.html">Tạp Chí Meo Meo</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="careers.html">Tuyển Dụng</a></li>
+            <li><a href="contact.html">Liên Hệ</a></li>
+            <li><a href="login.html">Đăng Nhập</a></li>
+            <li><a href="cart.html">Giỏ Hàng</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2 class="section-title"> Về Catcake</h2>
+
+        <!-- Sử dụng Float cho hình ảnh và đoạn văn (Chương 4 - Mục 4.2) -->
+        <section class="card clearfix" style="margin-bottom: 25px;">
+            <img src="images/about-studio.jpg" alt="Không gian Catcake Studio - nơi các bé mèo hẹn hò" style="float: left; width: 320px; height: 188px; margin-right: 20px;">
+            <h3>Đồng hành cùng từng bước của người bạn "bốn chân"!  </h3>
+            <br>
+            <p>Được thành lập vào năm 2023, <b>Catcake</b> khởi đầu là một trang tạp chí điện tử chia sẻ kiến thức nuôi mèo và những khoảnh khắc đáng yêu của chúng. Với châm ngôn <i>"Chúng tôi tin rằng mỗi chú mèo đều xứng đáng được yêu thương và có được một người bạn đời đồng điệu"</i>, tới năm 2026, Catcake đã phát triển thành nền tảng ghép đôi mèo cưng có kiểm duyệt sức khỏe thú y hàng đầu tại Việt Nam.</p>
+               
+        </section>
+
+        <!-- Danh sách mô tả Giá trị cốt lõi <dl> <dt> <dd> (Chương 2 - Mục 2.2.1) -->
+        <section class="grid-2">
+            <div class="card">
+                <h3>Giá trị cốt lõi</h3>
+                <br>
+                <dl>
+                    <dt><b> Minh bạch sức khỏe</b> - 100% hồ sơ mèo tham gia ghép đôi đều có sổ tiêm phòng và khám tổng quát.</dt>
+                  <br>  
+                    <dt><b>Tôn trọng tự nhiên</b> - Không ép buộc, tạo không gian thoải mái để các bé làm quen.</dt>
+                  <br>  
+                    <dt><b>Cộng đồng gắn kết</b> - Nơi người nuôi mèo Việt giao lưu, trao đổi các khoảnh khắc đáng yêu của những chú mèo.</dt>
+                    
+                </dl>
+            </div>
+
+            <!-- Đa phương tiện Video & Audio (Chương 2 - Mục 2.3.4) -->
+            <div class="card">
+                <h3>Góc Đa Phương Tiện</h3>
+                <br>
+                <p> Hoàng thượng ASMR</p>
+                <br>
+                <audio controls>
+                    <source src="video&audio\dragon-studio-purring-cat-401727.mp3" type="audio/mpeg">
+                    Trình duyệt của bạn không hỗ trợ phần tử audio.
+                </audio>
+                <p style="margin-top:10px;">Khi Hoàng thượng thư giãn</p>
+                <br>
+                <video style="width:100%; border-radius: 8px;" controls>
+                    <source src="video&audio\Mèo Con Ngủ Lông - Free on Pixabay.mp4" type="video/mp4">
+                    Trình duyệt không hỗ trợ thẻ video.
+                </video>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <footer>
+        <p> Copyright &copy; 2026 by Catcake Vietnam.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+/* Khai báo biến toàn cục tại :root (Chương 3 - Mục 3.3.3) */
+:root {
+    --primary-color: #ff6b81;
+    --secondary-color: #ffa502;
+    --bg-light: #fff9f5;
+    --text-dark: #2f3542;
+    --white: #ffffff;
+    --gray-border: #dfe4ea;
+}
+
+/* Reset CSS & Box-sizing (Chương 3 - Mục 3.5.3.4) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%; /* Quy đổi 1rem = 10px (Chương 3 - Mục 3.4.2) */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+
+/* Đổi màu khi bôi đen văn bản ::selection (Chương 3 - Mục 3.3.4) */
+::selection {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Header & Logo SVG (Chương 4 - Mục 4.1.1 & Flexbox 4.4) */
+header {
+    background: linear-gradient(to right, #ff6b81, #ff8e9e);
+    color: var(--white);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+}
+
+.logo-box svg {
+    margin-right: 12px;
+    animation: bounce 2s ease-in-out infinite; /* Animation Chương 3 - 3.5.13 */
+}
+
+.logo-box h1 {
+    font-size: 2.8rem;
+    text-shadow: 2px 2px #d63031;
+}
+
+/* Hiệu ứng @keyframes bounce (Chương 3 - Mục 3.5.13) */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-8px);
+    }
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
+/* Thanh điều hướng Navigation Bar dính trên top (Chương 3 - 3.5.7 & 3.6.2) */
+nav {
+    background-color: var(--text-dark);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+    padding: 14px 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Thứ tự trạng thái liên kết (Chương 3 - Mục 3.6.1) */
+nav ul li a:link, nav ul li a:visited {
+    color: var(--white);
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+nav ul li a:active {
+    background-color: var(--secondary-color);
+}
+
+/* Khung chứa nội dung chính */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.8rem;
+    margin: 25px 0 15px 0;
+    text-transform: uppercase;
+}
+
+/* Hệ thống lưới CSS Grid 3 cột (Chương 4 - Mục 4.3) */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+/* Thẻ Card dùng chung với hiệu ứng Transition & Transform (Chương 3 - 3.5.11 & 3.5.12) */
+.card {
+    background-color: var(--white);
+    border: 1px solid var(--gray-border);
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    border-color: var(--primary-color);
+}
+
+/* Thẻ Card dùng chung với hiệu ứng Transition & Transform (Chương 3 - 3.5.11 & 3.5.12)
+   Ảnh các card đã được crop đồng bộ tỉ lệ 1.7021 nên khung 375 x 220 không bị méo */
+.card img {
+    width: 100%;
+    height: 220px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Định dạng Nút bấm Button (Chương 3 - Mục 3.6.6) */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #ee5253;
+}
+
+.btn:active {
+    transform: translateY(3px);
+}
+
+/* Định dạng Bảng Table (Chương 3 - Mục 3.6.3) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    margin: 15px 0;
+}
+
+table, th, td {
+    border: 1px solid var(--gray-border);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    vertical-align: middle;
+}
+
+tr:hover {
+    background-color: #fff0f3;
+}
+
+/* Định dạng Form (Chương 3 - Mục 3.6.4) */
+form {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--gray-border);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    margin: 8px 0;
+    border: 2px solid var(--gray-border);
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    background-color: #fff9fa;
+    border: 2px solid var(--primary-color);
+    outline: none;
+}
+
+textarea {
+    height: 110px;
+    resize: none;
+}
+
+/* Clearfix xử lý Float (Chương 4 - Mục 4.2) */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Chân trang Footer (Chương 4 - Mục 4.1.1) */
+footer {
+    background-color: var(--text-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 40px;
+}
+
+/* Thiết kế Web đáp ứng Responsive @media (Chương 4 - Mục 4.1.2) */
+@media screen and (max-width: 992px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}

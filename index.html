@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catcake</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Internal CSS cho Banner Trang chủ -->
+    <style>
+        .hero-box {
+            background-color: #ffeaa7;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        #match-result {
+            display: none;
+            background-color: #dff9fb;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 2px dashed #ff6b81;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header với Logo SVG (Yêu cầu 1 & Chương 2 - Mục 2.3.4) -->
+    <header>
+        <div class="logo-box">
+            <svg width="60" height="60">
+                <polygon points="10,25 15,5 30,18" style="fill:#ffa502;stroke:#ffffff;stroke-width:2" />
+                <polygon points="50,25 45,5 30,18" style="fill:#ffa502;stroke:#ffffff;stroke-width:2" />
+                <circle cx="30" cy="35" r="20" stroke="white" stroke-width="3" fill="#ff4757" />
+                <circle cx="23" cy="32" r="3" fill="white" />
+                <circle cx="37" cy="32" r="3" fill="white" />
+                <polygon points="27,38 33,38 30,42" style="fill:pink;" />
+            </svg>
+            <div>
+                <h1>CATCAKE</h1>
+                <p>Thế Giới Mèo Cưng</p>    
+            </div>
+        </div>
+        <div>
+            <span>Giờ hệ thống: <b id="live-clock">00:00:00</b></span> |
+            <a href="cart.html" class="btn"> Giỏ hàng (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <!-- Thanh điều hướng nhất quán 10 trang -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="products.html">Ghép Đôi & Dịch Vụ</a></li>
+            <li><a href="product-detail.html">Hồ Sơ Chi Tiết</a></li>
+            <li><a href="news.html">Tạp Chí Meo Meo</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="careers.html">Tuyển Dụng</a></li>
+            <li><a href="contact.html">Liên Hệ</a></li>
+            <li><a href="login.html">Đăng Nhập</a></li>
+            <li><a href="cart.html">Giỏ Hàng</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <!-- Khu vực Slideshow tự động & Tìm bạn đời nhanh -->
+        <section class="hero-box grid-2">
+            <div>
+                <h2> Meow moew, meow!</h2>
+                <p> Catcacke, nơi kết nối hàng ngàn "con sen" tại Hà Nội để tìm bạn đời lý tưởng cho các bé mèo và chia sẻ những khoảnh khắc đáng yêu mỗi ngày.</p>
+                <br>
+                <div style="background: white; padding: 15px; border-radius: 8px;">
+                    <h3> </h3>
+                    <label for="mate-gender">Để Catcake giúp bạn nhé!</label>
+                    <select id="mate-gender">
+                        <option value="Cái">Tìm Cô Dâu (Mèo cái)</option>
+                        <option value="Đực">Tìm Chú Rể (Mèo đực)</option>
+                    </select>
+                    <button class="btn" onclick="findCatMate()">Xem kết quả </button>
+                    <div id="match-result"></div>
+                </div>
+            </div>
+            <div>
+                <img id="home-slideshow" src="images/slide-1.jpg" alt="Slideshow Mèo" style="width:100%; height:330px; border-radius:10px;">
+                <p><small><i> Những chú mèo đáng yêu chưa kìa!</i></small></p>
+            </div>
+        </section>
+
+        <!-- Danh sách ứng viên mèo Việt Nam nổi bật -->
+        <h2 class="section-title"> Các "Hoàng Thượng" Đang Tìm Bạn Đời</h2>
+        <section class="grid-3">
+            <article class="card">
+                <img src="images/cat-muop.jpg" alt="Mèo Mướp">
+                <span class="badge">Đực • 14 tháng</span>
+                <h3>Bé Mướp (Mèo Ta Vàng)</h3>
+            
+                <p>Đã tiêm đủ 3 mũi, tính cách quấn người, thích nghe nhạc trữ tình.</p>
+                <br>
+                <a href="product-detail.html" class="btn">Xem Hồ Sơ</a>
+                <button class="btn" onclick="addToCart('CAT01', 'Gói Hẹn Hò Cùng Bé Mướp', 250000)">Đặt Lịch Hẹn (250k)</button>
+            </article>
+
+            <article class="card">
+                <img src="images/cat-bo.jpg" alt="Mèo Bơ">
+                <span class="badge">Cái • 12 tháng</span>
+                <h3>Bé Bơ (Anh Lông Ngắn)</h3>
+             
+                <p>Mặt bánh bao, lông xám xanh mịn, thích nghe nhạc không lời.</p>
+                <br>
+                <a href="product-detail.html" class="btn">Xem Hồ Sơ</a>
+                <button class="btn" onclick="addToCart('CAT02', 'Gói Hẹn Hò Cùng Bé Bơ', 350000)">Đặt Lịch Hẹn (350k)</button>
+            </article>
+
+            <article class="card">
+                <img src="images/cat-mochi.jpg" alt="Mèo Mochi">
+                <span class="badge">Cái • 10 tháng</span>
+                <h3>Bé Mochi (Scottish Fold)</h3>
+    
+                <p>Tai cụp, ngoan ngoãn, ghét nghe nhạc không lời.</p>
+                <br>
+                <a href="product-detail.html" class="btn">Xem Hồ Sơ</a>
+                <button class="btn" onclick="addToCart('CAT03', 'Gói Hẹn Hò Cùng Bé Mochi', 400000)">Đặt Lịch Hẹn (400k)</button>
+            </article>
+        </section>
+
+        <!-- Góc chia sẻ khoảnh khắc mèo cưng (Thao tác DOM createElement/appendChild Chương 5 - 5.1) -->
+        <h2 class="section-title"> Góc Chia Sẻ Khoảnh Khắc Mèo Cưng</h2>
+        <section class="grid-2">
+            <div>
+                <form onsubmit="return false;">
+                    <h3>Tạo bài đăng</h3>
+                    <label for="owner-name">Tên của bạn</label>
+                    <input type="text" id="owner-name" placeholder="VD: Annabell - Hà Nội">
+                    <label for="moment-text">Khoảnh khắc đáng yêu</label>
+                    <input type="text" id="moment-text" placeholder="VD: Hôm nay bé Cam biết tự mở cửa phòng!">
+                    <button type="button" class="btn" onclick="shareMoment()">Đăng Lên Tạp Chí</button>
+                </form>
+            </div>
+            <div class="card">
+                <h3>Bản Tin Catcake đáng yêu mỗi ngày </h3>
+                <ul id="moment-list" style="padding-left: 20px; margin-top: 10px;">
+                    <li><b>Hương Giang (Hà Nội):</b> Bé Mướp nhà mình vừa đón 4 bé mèo con siêu xinh! ❤️ <br>(Lượt thích: <span id="like-count">15</span>) <button class="btn" onclick="likeMoment()">👍Thích</button></li>
+                    <li><b>Quốc Tuấn (Đà Nẵng):</b> Tìm bạn đi dạo công viên cuối tuần cho bé Mèo Xiêm 1 tuổi.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p> Copyright &copy; 2026 by Catcake Vietnam. </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Slideshow tự động (Chương 5 - Mục 5.1)
+        let slideImages = [
+            "images/slide-1.jpg",
+            "images/slide-2.jpg",
+            "images/slide-3.jpg"
+        ];
+        let slideIdx = 0;
+        setInterval(function() {
+            slideIdx = (slideIdx + 1) % slideImages.length;
+            document.getElementById("home-slideshow").src = slideImages[slideIdx];
+        }, 3000);
+
+        // Thêm khoảnh khắc mới bằng createElement & appendChild (Chương 5 - Mục 5.1 & 5.4.7)
+        function shareMoment() {
+            let owner = document.getElementById("owner-name").value;
+            let text = document.getElementById("moment-text").value;
+            if (owner === "" || text === "") {
+                alert("Vui lòng nhập đầy đủ tên và nội dung khoảnh khắc!");
+                return;
+            }
+            let li = document.createElement("li");
+            // Chống XSS + đúng kiến thức Chương 5 (Thay đổi nội dung element bằng textContent)
+            let nameTag = document.createElement("b");
+            nameTag.textContent = owner + ":";
+            li.appendChild(nameTag);
+            let textTag = document.createElement("span");
+            textTag.textContent = " " + text;
+            li.appendChild(textTag);
+            document.getElementById("moment-list").appendChild(li);
+            document.getElementById("owner-name").value = "";
+            document.getElementById("moment-text").value = "";
+        }
+
+        // Bộ đếm lượt thả tim (Chương 5 - Mục 5.1)
+        let likes = 15;
+        function likeMoment() {
+            likes++;
+            document.getElementById("like-count").innerText = likes;
+        }
+    </script>
+</body>
+</html>

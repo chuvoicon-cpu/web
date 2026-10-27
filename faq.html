@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Catcake</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        details {
+            background: white;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid #dfe4ea;
+            cursor: pointer;
+        }
+        summary {
+            font-weight: bold;
+            color: #ff6b81;
+            font-size: 1.7rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <svg width="60" height="60">
+                <circle cx="30" cy="35" r="20" stroke="white" stroke-width="3" fill="#ff4757" />
+            </svg>
+            <div>
+                <h1>CATCAKE</h1>
+                <p>Thế Giới Mèo Cưng</p>
+            </div>
+        </div>
+        <div>
+            <a href="cart.html" class="btn"> Giỏ hàng (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="products.html">Ghép Đôi & Dịch Vụ</a></li>
+            <li><a href="product-detail.html">Hồ Sơ Chi Tiết</a></li>
+            <li><a href="news.html">Tạp Chí Meo Meo</a></li>
+            <li><a href="faq.html" class="active">FAQ</a></li>
+            <li><a href="careers.html">Tuyển Dụng</a></li>
+            <li><a href="contact.html">Liên Hệ</a></li>
+            <li><a href="login.html">Đăng Nhập</a></li>
+            <li><a href="cart.html">Giỏ Hàng</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2 class="section-title"> Giải đáp thắc mắc cùng Catcake! </h2>
+
+        <!-- Sử dụng thẻ <details> và <summary> (Chương 2 - Mục 2.2.1) -->
+        <section>
+            <details>
+                <summary>1. Điều kiện để đăng ký hồ sơ tìm bạn đời cho mèo trên Catcake là gì?</summary>
+                <p>Mèo tham gia cần đạt từ 10 tháng tuổi trở lên, đã tiêm phòng đầy đủ mũi 4, không mắc các bệnh nấm da hay ký sinh trùng tại thời điểm hẹn hò.</p>
+            </details>
+
+            <details>
+                <summary>2. Thời gian mèo của bạn lưu trú khi ghép đôi kéo dài bao lâu?</summary>
+                <p>Thông thường hai bé sẽ ở cùng nhau từ 3 đến 5 ngày tại phòng riêng có camera theo dõi 24/7 của Catcake.</p>
+            </details>
+
+            <details>
+                <summary>3. Làm sao để ảnh mèo của bạn được xuất hiện trên tạp chí Catcake?</summary>
+                <p>Bạn có thể đăng ký tài khoản thành viên và gửi ảnh chất lượng cao ở mục Cộng đồng. Ban biên tập sẽ chọn 20 bức ảnh xuất sắc nhất mỗi tháng để đăng tải trên tạp chí.</p>
+            </details>
+        </section>
+
+        <!-- Công cụ ước tính chi phí lưu trú sử dụng thẻ <output> (Chương 2 - Mục 2.3.1.10) -->
+        <h2 class="section-title"> Công Cụ Tính Nhanh Chi Phí Lưu Trú Hẹn Hò</h2>
+        <section class="card">
+            <form oninput="totalCost.value = (parseInt(days.value) * 100000 + parseInt(spaFee.value)).toLocaleString() + ' VNĐ'">
+                <label for="days">Số ngày gửi ghép đôi tại phòng VIP (100.000đ/ngày): </label>
+                1 ngày <input type="range" id="days" name="days" min="1" max="10" value="3" style="width:200px;"> 10 ngày
+                <br><br>
+                <label for="spaFee">Dịch vụ Spa tắm thơm đi kèm (VNĐ):</label>
+                <input type="number" id="spaFee" name="spaFee" value="150000" step="50000">
+                <br>
+                <p style="font-size: 1.8rem;"> <b>Tổng chi phí dự kiến: </b> 
+                    <output name="totalCost" for="days spaFee" style="color:red; font-weight:bold;">450,000 VNĐ</output>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p> Copyright &copy; 2026 by Catcake Vietnam.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

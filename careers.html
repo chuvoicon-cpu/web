@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catcake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <svg width="60" height="60">
+                <circle cx="30" cy="35" r="20" stroke="white" stroke-width="3" fill="#ff4757" />
+            </svg>
+            <div>
+                <h1>CATCAKE</h1>
+                <p>Thế Giới Mèo Cưng</p>
+            </div>
+        </div>
+        <div>
+            <a href="cart.html" class="btn"> Giỏ hàng (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="products.html">Ghép Đôi & Dịch Vụ</a></li>
+            <li><a href="product-detail.html">Hồ Sơ Chi Tiết</a></li>
+            <li><a href="news.html">Tạp Chí Meo Meo</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="careers.html" class="active">Tuyển Dụng</a></li>
+            <li><a href="contact.html">Liên Hệ</a></li>
+            <li><a href="login.html">Đăng Nhập</a></li>
+            <li><a href="cart.html">Giỏ Hàng</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2 class="section-title"> Danh Sách Vị Trí Tuyển Dụng</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Khối Phòng Ban</th>
+                    <th>Vị Trí Công Việc</th>
+                    <th>Số Lượng</th>
+                    <th>Mức Lương & Quyền Lợi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2"><b>Chăm Sóc Khách Hàng</b></td>
+                    <td>Chuyên viên tư vấn ghép đôi cho mèo</td>
+                    <td>03 người</td>
+                    <td>9.000.000 - 12.000.000 VNĐ</td>
+                </tr>
+                <tr>
+                    <td>Bác Sĩ Thú Y Kiểm Duyệt Phả Hệ</td>
+                    <td>01 người</td>
+                    <td>15.000.000 - 20.000.000 VNĐ</td>
+                </tr>
+                <tr>
+                    <td><b> Truyền thông & Biên tập</b></td>
+                    <td>Biên Tập Viên & Nhiếp Ảnh Gia Thú Cưng</td>
+                    <td>02 người</td>
+                    <td>10.000.000 - 14.000.000 VNĐ</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Chính sách & phúc lợi + Biểu mẫu ứng tuyển: 2 cột CSS Grid cân bằng (Chương 4 - Mục 4.3),
+             hai cột đều là .card nên chiều cao được kéo dài bằng nhau - hết canh lệch -->
+        <section class="grid-2" style="margin-top: 25px;">
+            <div class="card">
+                <h3>Chính Sách Nhân Sự &amp; Quy Trình Tuyển Dụng</h3>
+                <p style="margin-top: 10px;">Tại <b>Catcake</b>, chúng tôi xây dựng môi trường làm việc
+                    dựa trên tình yêu thương động vật, với chính sách đãi ngộ minh bạch và phúc lợi rõ ràng.</p>
+                <h4 style="margin-top: 18px;">Quy trình tuyển dụng 4 bước:</h4>
+                <ol style="list-style-type: upper-roman; padding-left: 30px; margin: 12px 0; line-height: 1.9;">
+                    <li>Nộp hồ sơ trực tuyến</li>
+                    <li>Phỏng vấn</li>
+                    <li>Thử thách thực tế</li>
+                    <li>Nhận thông báo trúng tuyển</li>
+                </ol>
+                <h4 style="margin-top: 18px;">Chế độ đãi ngộ &amp; phúc lợi</h4>
+                <ul style="list-style-type: square; padding-left: 25px; margin: 12px 0; line-height: 1.9;">
+                    <li><b>Lương &amp; thưởng:</b> mức lương cạnh tranh theo năng lực, thưởng KPI theo quý và tháng lương thứ 13.</li>
+                    <li><b>"Con sen" đi làm cùng chủ:</b> được mang mèo cưng tới Studio mỗi ngày, có khu vui chơi an toàn riêng cho bé.</li>
+                    <li><b>Chăm sóc thú cưng miễn phí:</b> spa + khám thú y không giới hạn cho mèo nhà nhân viên.</li>
+                    <li><b>An ninh xã hội đầy đủ:</b> đóng BHXH theo luật, 15 ngày nghỉ phép năm và nghỉ sinh nhật có lương.</li>
+                    <li><b>Hoạt động gắn kết:</b> du lịch hằng năm, team building theo quý và quà sinh nhật cho từng thành viên.</li>
+                </ul>
+               
+            </div>
+
+            <div class="card">
+                <!-- CSS inline (Chương 3 - 3.3.1): tắt nền/viền riêng của form để đồng bộ với card bao ngoài -->
+                <form onsubmit="alert('Hồ sơ ứng tuyển của bạn đã được gửi thành công!'); return false;"
+                      style="background-color: transparent; border: none; padding: 0;">
+                <h3> Nộp Đơn Ứng Tuyển Trực Tuyến</h3>
+                <label for="job-name">Họ và tên ứng viên (*):</label>
+                <input type="text" id="job-name" required placeholder="Nhập họ tên...">
+
+                <label for="job-pos">Vị trí ứng tuyển:</label>
+                <select id="job-pos">
+                    <optgroup label="Chăm Sóc Khách Hàng">
+                        <option value="maimoi">Chuyên viên tư vấn</option>
+                        <option value="bacsi">Bác Sĩ Thú Y</option>
+                    </optgroup>
+                    <optgroup label="Truyền Thông & Biên Tập">
+                        <option value="bientap">Biên Tập Viên / Nhiếp Ảnh</option>
+                    </optgroup>
+                </select>
+
+                <label for="job-cv">Đính kèm file CV (.pdf, .doc):</label>
+                <input type="file" id="job-cv" accept=".pdf,.doc,.docx" required>
+
+                <br><br>
+                <input type="submit" class="btn" value="Nộp Hồ Sơ Ứng Tuyển">
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p> Copyright &copy; 2026 by Catcake Vietnam.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

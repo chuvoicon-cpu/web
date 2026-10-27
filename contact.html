@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Catcake </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <svg width="60" height="60">
+                <circle cx="30" cy="35" r="20" stroke="white" stroke-width="3" fill="#ff4757" />
+            </svg>
+            <div>
+                <h1>CATCAKE</h1>
+                <p>Thế Giới Mèo Cưng</p>
+            </div>
+        </div>
+        <div>
+            <a href="cart.html" class="btn">Giỏ hàng (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="products.html">Ghép Đôi & Dịch Vụ</a></li>
+            <li><a href="product-detail.html">Hồ Sơ Chi Tiết</a></li>
+            <li><a href="news.html">Tạp Chí Meo Meo</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="careers.html">Tuyển Dụng</a></li>
+            <li><a href="contact.html" class="active">Liên Hệ</a></li>
+            <li><a href="login.html">Đăng Nhập</a></li>
+            <li><a href="cart.html">Giỏ Hàng</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2 class="section-title">Thông Tin Liên Hệ</h2>
+
+        <section class="grid-2">
+            <!-- Biểu mẫu liên hệ có đếm ký tự onkeyup (Chương 5 - Mục 5.1) -->
+            <div>
+                <form name="contactForm" onsubmit="return validateContact()">
+                    <h3>Hãy để Catcake lắng nghe bạn nhiều hơn nhé!</h3>
+                    <label for="c-name">Họ và tên của bạn</label>
+                    <input type="text" id="c-name" name="fullname" placeholder="Nhập họ và tên...">
+
+                    <label for="c-email">Địa chỉ Email</label>
+                    <input type="email" id="c-email" name="email" placeholder="example@gmail.com">
+
+                    <label for="c-phone">Số điện thoại</label>
+                    <input type="tel" id="c-phone" name="phone" placeholder="09xxxxxxxx">
+
+                    <label for="c-msg">Nội dung cần tư vấn:</label>
+                    <textarea id="c-msg" onkeyup="countChars()" placeholder="Nhập thông tin giống mèo của bạn..."></textarea>
+                    <p id="char-counter">Số ký tự đã nhập: 0</p>
+                    <br>
+                    <input type="submit" class="btn" value="Gửi">
+                    <input type="reset" class="btn" style="background-color:gray;" value="Nhập Lại">
+                </form>
+            </div>
+
+            <!-- Thông tin văn phòng & Google Maps nhúng bằng <iframe> (Chương 2 - Mục 2.3.4) -->
+            <div class="card">
+                <h3> Catcake Tower </h3>
+                <address>
+                    <b>Trụ sở chính:</b> Số 207 Giải Phóng, Quận Hai Bà Trưng, Hà Nội <br>
+                    <b>Điện thoại:</b> 1900 1008<br>
+                    <b>Email:</b> <a href="mailto:lienhe@catcake.vn">lienhe@catcake.vn</a><br>
+                    <b>Giờ mở cửa:</b> 08:00 - 21:00 (Tất cả các ngày trong tuần)
+                </address>
+                <br>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.813813879244!2d105.83992427343277!3d21.00009918876586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac71752d8f79%3A0xd2ec575c01017afa!2sNational%20Economics%20University!5e0!3m2!1sen!2s!4v1724816444535!5m2!1sen!2s" 
+                        width="100%" height="280" style="border:0;" allowfullscreen="" title="Bản đồ Catcake tại NEU"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p> Copyright &copy; 2026 by Catcake Vietnam.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        function countChars() {
+            let txt = document.getElementById("c-msg").value;
+            document.getElementById("char-counter").innerHTML = "Số ký tự đã nhập: " + txt.length;
+        }
+        function validateContact() {
+            let name = document.getElementById("c-name").value;
+            let email = document.getElementById("c-email").value;
+            if (name === "" || email === "") {
+                alert("Họ tên và Email không được để trống!");
+                return false;
+            }
+            alert("Cảm ơn " + name + "! Yêu cầu tư vấn của bạn đã được gửi tới Catcake.");
+            return false;
+        }
+    </script>
+</body>
+</html>
